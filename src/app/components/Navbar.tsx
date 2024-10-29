@@ -30,8 +30,6 @@ export default function Navbar() {
     { name: 'Tentang Kami', href: '/tentang-kami' },
   ];
 
-  const logoPath = '/assets/images/calmind.png';
-
   return (
     <div className={`
       fixed w-full top-0 z-[60] navbar-container transition-all duration-300
@@ -51,12 +49,13 @@ export default function Navbar() {
             <div className="flex-none transition-transform duration-300 hidden lg:block">
               <Link href="/">
                 <Image
-                  src={logoPath}
+                  src="/calmind.png"
                   alt="Calmind Logo"
                   width={isScrolled ? 100 : 120}
                   height={isScrolled ? 33 : 40}
                   className="object-contain transition-all duration-300"
                   priority
+                  quality={100}
                 />
               </Link>
             </div>
@@ -69,12 +68,21 @@ export default function Navbar() {
                     key={item.name}
                     href={item.href}
                     className={`
-                      text-gray-800 hover:text-gray-600 nav-link relative transition-all duration-300 whitespace-nowrap
+                      relative text-gray-800 nav-link transition-all duration-300 whitespace-nowrap
                       ${isScrolled ? 'text-sm px-2 xl:px-3' : 'text-base px-3 xl:px-4'}
-                      ${pathname === item.href ? 'text-[#98C7CC] font-semibold after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#98C7CC]' : ''}
+                      group hover:text-[#98C7CC]
+                      ${pathname === item.href 
+                        ? 'text-[#98C7CC] font-semibold after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#98C7CC]' 
+                        : ''
+                      }
                     `}
                   >
                     {item.name}
+                    <span className={`
+                      absolute left-0 -bottom-1 w-0 h-0.5 bg-[#98C7CC] 
+                      transition-all duration-300 group-hover:w-full
+                      ${pathname === item.href ? 'hidden' : ''}
+                    `}></span>
                   </Link>
                 ))}
               </div>
@@ -94,7 +102,7 @@ export default function Navbar() {
                 </button>
               </div>
 
-              {/* Hamburger Menu Button - Centered on Mobile */}
+              {/* Hamburger Menu Button */}
               <button
                 className="lg:hidden fixed right-4 p-2 rounded-lg z-[70] hover:bg-gray-100/10"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -119,17 +127,18 @@ export default function Navbar() {
         >
           {/* Header with Logo and Close Button */}
           <div className="flex items-center justify-between px-6 py-4 border-b">
-            <Link href="/" onClick={() => setIsMenuOpen(false)}>
-              <Image
-                src={'/calmind.png'}
-                alt="Calmind Logo"
-                width={100}
-                height={33}
-                className="object-contain"
-                priority
-              />
-            </Link>
-          </div>
+              <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                <Image
+                  src="/calmind.png"
+                  alt="Calmind Logo"
+                  width={100}
+                  height={33}
+                  className="object-contain"
+                  priority
+                  quality={100}
+                />
+              </Link>
+            </div>
 
           <div className="px-4 py-6 space-y-4">
             {navigationItems.map((item, index) => (
@@ -139,15 +148,19 @@ export default function Navbar() {
                 className={`
                   block px-4 py-3 text-lg font-medium rounded-lg transition-all duration-300
                   transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}
+                  relative group
                   ${pathname === item.href 
                     ? 'text-[#98C7CC] bg-[#98C7CC]/10 font-semibold' 
-                    : 'text-gray-800 hover:text-gray-600 hover:bg-gray-50'
+                    : 'text-gray-800 hover:text-[#98C7CC]'
                   }
                 `}
                 style={{ transitionDelay: `${150 + (index * 50)}ms` }}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
+                {pathname !== item.href && (
+                  <span className="absolute left-4 right-4 bottom-2 h-0.5 bg-[#98C7CC] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                )}
               </Link>
             ))}
             <button 

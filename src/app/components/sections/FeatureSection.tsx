@@ -7,7 +7,7 @@ export default function FeatureSection() {
      {/* Background Hero */}
      <div className="absolute inset-0 w-full h-full">
        <Image
-         src="/assets/images/bg-hero.png"
+         src="/bg-hero.png"
          alt="Background hero"
          fill
          className="object-cover"

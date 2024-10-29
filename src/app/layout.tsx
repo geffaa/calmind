@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   title: "Calmind",
   description: "Your mental health companion",
   icons: {
-    icon: '/assets/images/logo-web.png',
-    apple: '/assets/images/logo-web.png',
+    icon: '/logo-web.png',
+    apple: '/logo-web.png',
   },
   openGraph: {
-    images: '/assets/images/logo-web.png',
+    images: '/logo-web.png',
   },
 };
 

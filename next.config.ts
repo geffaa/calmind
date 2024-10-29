@@ -8,8 +8,6 @@ const nextConfig: NextConfig = {
         hostname: 'calmind-nine.vercel.app',
       },
     ],
-    unoptimized: true, // Menonaktifkan optimisasi gambar
-    minimumCacheTTL: 60,
   },
 };
 
