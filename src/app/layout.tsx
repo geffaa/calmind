@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import "./animations.css"
 import Navbar from "@/app/components/Navbar";
 
 const openSans = Open_Sans({
