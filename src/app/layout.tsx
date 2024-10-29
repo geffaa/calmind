@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Open_Sans } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const openSans = Open_Sans({
   subsets: ['latin'],
