@@ -1,21 +1,44 @@
+/* Update globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background min-h-screen;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Navbar transitions */
+  .navbar-container {
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .navbar-main {
+    transition: 
+      width 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      max-width 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      border-radius 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-link {
+    transition: padding 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: center;
+    white-space: nowrap;
+  }
+}
+
+@keyframes drawOval {
+  0% {
+    stroke-dasharray: 0 1000;
+  }
+  100% {
+    stroke-dasharray: 1000 1000;
+  }
+}
+
+.animate-draw {
+  animation: drawOval 2s ease-in-out forwards;
 }

@@ -9,11 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#F2F2F2",
+      },
+      fontFamily: {
+        sans: ['var(--font-open-sans)'],
+        // Atau jika tidak menggunakan variable:
+        // sans: ['Open Sans', 'sans-serif'],
       },
     },
   },
   plugins: [],
 };
+
 export default config;
