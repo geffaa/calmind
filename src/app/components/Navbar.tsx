@@ -30,6 +30,8 @@ export default function Navbar() {
     { name: 'Tentang Kami', href: '/tentang-kami' },
   ];
 
+  const logoPath = '/assets/images/calmind.png';
+
   return (
     <div className={`
       fixed w-full top-0 z-[60] navbar-container transition-all duration-300
@@ -49,7 +51,7 @@ export default function Navbar() {
             <div className="flex-none transition-transform duration-300 hidden lg:block">
               <Link href="/">
                 <Image
-                  src="/assets/images/calmind.png"
+                  src={logoPath}
                   alt="Calmind Logo"
                   width={isScrolled ? 100 : 120}
                   height={isScrolled ? 33 : 40}
@@ -119,7 +121,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between px-6 py-4 border-b">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
               <Image
-                src="/assets/images/calmind.png"
+                src={'/calmind.png'}
                 alt="Calmind Logo"
                 width={100}
                 height={33}
