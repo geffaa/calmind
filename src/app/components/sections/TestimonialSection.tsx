@@ -125,7 +125,7 @@ const testimonials = [
     return (
       <section 
         ref={sectionRef}
-        className={`relative min-h-screen bg-white py-20 transition-all duration-1000 transform 
+        className={`relative min-h-screen bg-[#FBFBFB] py-20 transition-all duration-1000 transform 
           ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       >
         {/* Main Container */}
