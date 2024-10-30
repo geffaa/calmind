@@ -79,7 +79,7 @@ const ArticleSection = () => {
         {/* Header with animation */}
         <div className="text-center mb-8 sm:mb-12 header-animate">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            <span className="text-[#C3B1E1] text-underline-animation">Artikel</span>{" "}
+            <span className="text-[#C3B1E1] underline decoration-[#C3B1E1]">Artikel</span>{" "}
             <span className="text-[#2F2F2F]">Psikologi Terbaru</span>
           </h2>
         </div>
@@ -132,7 +132,7 @@ const ArticleSection = () => {
                     {article.date}
                   </div>
                   <button className="p-1.5 sm:p-2 hover:bg-[#F3F0FF] rounded-full transition-all duration-300">
-                    <div className="relative w-5 sm:w-7 h-5 sm:h-7">
+                    <div className="relative w-7 sm:w-7 h-7 sm:h-7">
                       <Image
                         src="/share-icon.png"
                         alt="Share"

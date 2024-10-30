@@ -104,7 +104,7 @@ export default function Navbar() {
 
               {/* Hamburger Menu Button */}
               <button
-                className="lg:hidden fixed right-4 p-2 rounded-lg z-[70] hover:bg-gray-100/10"
+                className="lg:hidden fixed right-4 p-2 rounded-lg z-[70] bg-gray-200"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 <div className="w-6 h-6 relative flex items-center justify-center">
@@ -126,12 +126,12 @@ export default function Navbar() {
           `}
         >
           {/* Header with Logo and Close Button */}
-          <div className="flex items-center justify-between px-6 py-4 border-b">
+          <div className="flex items-center justify-between px-6 py-4 border-b pb-7">
               <Link href="/" onClick={() => setIsMenuOpen(false)}>
                 <Image
                   src="/muarasuara.png"
                   alt="Muara Suara Logo"
-                  width={100}
+                  width={150}
                   height={33}
                   className="object-contain"
                   priority

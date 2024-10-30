@@ -143,7 +143,7 @@ const ProfileSection = () => {
                     <div className="mb-4 lg:mb-6">
                       <h2 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                         Profil{" "}
-                        <span className="text-[#C3B1E1] text-underline-animation">
+                        <span className="text-[#C3B1E1] underline decoration-[#C3B1E1]">
                           Konselor
                         </span>{" "}
                         <br className="hidden lg:block" />
