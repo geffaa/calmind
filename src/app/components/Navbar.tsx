@@ -163,12 +163,13 @@ export default function Navbar() {
                 )}
               </Link>
             ))}
-            <button 
-              className="w-full bg-[#C3B1E1] text-[#FBFBFB] text-base font-bold px-6 py-3 rounded-full hover:opacity-90 transition-all duration-300 mt-4 transform"
+            <a 
+              href="/aivoice"
+              className="w-full bg-[#C3B1E1] text-[#FBFBFB] text-base font-bold px-6 py-3 rounded-full hover:opacity-90 transition-all duration-300 mt-4 transform inline-block text-center"
               style={{ transitionDelay: '350ms' }}
             >
               Coba AI Voice Mood
-            </button>
+            </a>
           </div>
         </div>
 

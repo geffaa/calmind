@@ -110,27 +110,33 @@ const DownloadSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <button className="animate-button flex items-center justify-center gap-2 bg-[#FBFBFB] hover:bg-white/90 text-[#2F2F2F] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <a 
+                href="/download"
+                className="animate-button flex items-center justify-center gap-2 bg-[#FBFBFB] hover:bg-white/90 text-[#2F2F2F] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
                 <Image
-                  src="/playstore.png"
-                  alt="Play Store"
-                  width={20}
-                  height={20}
-                  className="object-contain"
+                src="/playstore.png"
+                alt="Play Store"
+                width={20}
+                height={20}
+                className="object-contain"
                 />
                 <span className="font-semibold text-sm">Play Store</span>
-              </button>
+            </a>
 
-              <button className="animate-button flex items-center justify-center gap-2 bg-[#FBFBFB] hover:bg-white/90 text-[#2F2F2F] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <a 
+                href="/download"
+                className="animate-button flex items-center justify-center gap-2 bg-[#FBFBFB] hover:bg-white/90 text-[#2F2F2F] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
                 <Image
-                  src="/appstore.png"
-                  alt="App Store"
-                  width={20}
-                  height={20}
-                  className="object-contain"
+                src="/appstore.png"
+                alt="App Store"
+                width={20}
+                height={20}
+                className="object-contain"
                 />
                 <span className="font-semibold text-sm">App Store</span>
-              </button>
+            </a>
             </div>
           </div>
         </div>

@@ -174,19 +174,21 @@ const ProfileSection = () => {
                   {/* Button Section */}
                   <div className="mt-6 lg:mt-0">
                     <div className="block lg:hidden">
-                      <button 
-                        className="w-full bg-[#C3B1E1] text-[#FBFBFB] px-6 py-3 rounded-full text-sm font-bold hover:bg-[#B39FD3] transition-all duration-300 active:scale-[0.98] shadow-sm hover:shadow-md"
+                      <a 
+                        href="/all-counselors"
+                        className="w-full bg-[#C3B1E1] text-[#FBFBFB] px-6 py-3 rounded-full text-sm font-bold hover:bg-[#B39FD3] transition-all duration-300 active:scale-[0.98] shadow-sm hover:shadow-md inline-block text-center"
                       >
                         Lihat Semua
-                      </button>
+                      </a>
                     </div>
 
                     <div className="hidden lg:block">
-                      <button 
-                        className="bg-[#C3B1E1] text-[#FBFBFB] px-8 py-3.5 rounded-full text-base font-bold hover:bg-[#B39FD3] transition-all duration-300 hover:shadow-md active:scale-[0.98] shadow-sm"
+                      <a 
+                        href="/all-counselors"
+                        className="bg-[#C3B1E1] text-[#FBFBFB] px-8 py-3.5 rounded-full text-base font-bold hover:bg-[#B39FD3] transition-all duration-300 hover:shadow-md active:scale-[0.98] shadow-sm inline-block text-center"
                       >
                         Lihat Semua
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>

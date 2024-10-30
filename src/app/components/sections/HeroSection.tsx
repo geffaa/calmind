@@ -87,12 +87,18 @@ export default function HeroSection() {
 
               {/* Buttons */}
               <div className="animate-on-scroll flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-[90%] sm:max-w-none transition-all duration-300 opacity-0">
-                <button className="bg-[#98C7CC] text-white px-6 sm:px-7 lg:px-8 py-3 lg:py-4 rounded-full font-semibold text-base lg:text-lg hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto whitespace-nowrap">
+                <a 
+                  href="/download"
+                  className="bg-[#98C7CC] text-center text-white px-6 sm:px-7 lg:px-8 py-3 lg:py-4 rounded-full font-semibold text-base lg:text-lg hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto whitespace-nowrap"
+                >
                   Unduh Aplikasi Muarasuara
-                </button>
-                <button className="bg-[#C3B1E1] text-white px-6 sm:px-7 lg:px-8 py-3 lg:py-4 rounded-full font-semibold text-base lg:text-lg hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto whitespace-nowrap">
+                </a>
+                <a 
+                  href="/aivoice"
+                  className="bg-[#C3B1E1] text-center text-white px-6 sm:px-7 lg:px-8 py-3 lg:py-4 rounded-full font-semibold text-base lg:text-lg hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto whitespace-nowrap"
+                >
                   Coba AI Voice Mood
-                </button>
+                </a>
               </div>
             </div>
           </div>

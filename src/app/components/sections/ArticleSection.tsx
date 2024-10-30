@@ -149,9 +149,12 @@ const ArticleSection = () => {
 
         {/* Button with animation */}
         <div className="text-center">
-          <button className="button-animate bg-[#C3B1E1] text-[#FBFBFB] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full mt-6 sm:mt-8 text-sm sm:text-base font-bold hover:bg-[#B39FD3] transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:scale-[0.98] shadow-sm">
+          <a 
+            href="/articles"
+            className="button-animate bg-[#C3B1E1] text-[#FBFBFB] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full mt-6 sm:mt-8 text-sm sm:text-base font-bold hover:bg-[#B39FD3] transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:scale-[0.98] shadow-sm inline-block"
+          >
             Lihat Semua
-          </button>
+          </a>
         </div>
       </div>
     </section>
