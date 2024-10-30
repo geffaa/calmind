@@ -170,7 +170,7 @@ const WorkflowSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
             <span className="text-white">Cara</span>{" "}
-            <span className="text-gray-700 underline decoration-4">Kerja</span>{" "}
+            <span className="text-gray-700 underline decoration">Kerja</span>{" "}
             <span className="text-white">Muarasuara</span>
           </h2>
         </div>
