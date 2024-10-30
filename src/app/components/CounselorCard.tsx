@@ -50,7 +50,7 @@ const CounselorCard: React.FC<CounselorCardProps> = ({ counselor, onPrev, onNext
     <div className="bg-white rounded-[32px] shadow-md overflow-hidden animate-fade-in w-full lg:w-[600px]">
       <div className="flex flex-col md:flex-row h-auto md:h-[420px]">
         {/* Image container with adjusted mobile height */}
-        <div className="w-full md:w-[280px] md:shrink-0">
+        <div className="w-full md:w-[180px] md:shrink-0">
           <div className="relative w-full h-[280px] md:h-[420px]">
             <Image
               src={counselor.image}

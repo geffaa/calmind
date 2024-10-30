@@ -78,13 +78,14 @@ const WorkflowSection = () => {
   ];
 
   useEffect(() => {
-    const observerOptions = {
+    // Mobile animation setup
+    const mobileObserverOptions = {
       root: null,
       rootMargin: '-10% 0px -10% 0px',
       threshold: 0.1,
     };
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+    const mobileObserverCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('opacity-100', 'translate-y-0');
@@ -96,15 +97,70 @@ const WorkflowSection = () => {
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    // Desktop animation setup
+    const desktopObserverOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const desktopObserverCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        const step = entry.target as HTMLElement;
+        const circle = step.querySelector('.workflow-circle') as HTMLElement;
+        const text = step.querySelector('.workflow-text') as HTMLElement;
+
+        if (entry.isIntersecting) {
+          // Animate circle first
+          circle.classList.remove('scale-0', 'opacity-0');
+          circle.classList.add('scale-100', 'opacity-100');
+
+          // Then animate text with a delay
+          setTimeout(() => {
+            text.classList.remove('-translate-y-4', 'opacity-0');
+            text.classList.add('translate-y-0', 'opacity-100');
+          }, 200);
+        } else {
+          // Reverse animations when leaving viewport
+          circle.classList.add('scale-0', 'opacity-0');
+          circle.classList.remove('scale-100', 'opacity-100');
+          
+          text.classList.add('-translate-y-4', 'opacity-0');
+          text.classList.remove('translate-y-0', 'opacity-100');
+        }
+      });
+    };
+
+    const mobileObserver = new IntersectionObserver(mobileObserverCallback, mobileObserverOptions);
+    const desktopObserver = new IntersectionObserver(desktopObserverCallback, desktopObserverOptions);
     
+    // Set up mobile animations
     document.querySelectorAll('.workflow-mobile-card').forEach(card => {
-      observer.observe(card);
-      // Initially hide all cards
-      card.classList.add('opacity-0', 'translate-y-20');
+      mobileObserver.observe(card);
+      card.classList.add('opacity-0', 'translate-y-20', 'transition-all', 'duration-700', 'ease-out');
     });
 
-    return () => observer.disconnect();
+    // Set up desktop animations
+    document.querySelectorAll('.workflow-step').forEach(step => {
+      desktopObserver.observe(step);
+      
+      // Set initial states for animation
+      const circle = step.querySelector('.workflow-circle');
+      const text = step.querySelector('.workflow-text');
+      
+      if (circle) {
+        circle.classList.add('scale-0', 'opacity-0', 'transition-transform', 'duration-500', 'ease-out');
+      }
+      
+      if (text) {
+        text.classList.add('-translate-y-4', 'opacity-0', 'transition-all', 'duration-500', 'ease-out');
+      }
+    });
+
+    return () => {
+      mobileObserver.disconnect();
+      desktopObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -127,10 +183,9 @@ const WorkflowSection = () => {
               {steps.map((step) => (
                 <div 
                   key={step.number} 
-                  className="workflow-mobile-card transform transition-all duration-700 ease-out"
+                  className="workflow-mobile-card"
                 >
                   <div className="relative mx-auto max-w-sm">
-                    {/* Number Circle */}
                     <div 
                       className={`absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 ${step.color} 
                         rounded-full flex items-center justify-center text-white text-xl font-bold 
@@ -139,7 +194,6 @@ const WorkflowSection = () => {
                       {step.number}
                     </div>
                     
-                    {/* Text Content */}
                     <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 pt-8 min-h-[160px]
                       shadow-lg transform transition-all duration-300 hover:bg-white/10">
                       <h3 className="text-white text-lg font-bold mb-3 text-center">
@@ -155,34 +209,44 @@ const WorkflowSection = () => {
             </div>
           </div>
 
-          {/* Desktop View - Unchanged */}
+          {/* Desktop View */}
           <div className="hidden lg:block relative h-[600px] w-full max-w-[1000px] mx-auto transform-gpu scale-100 xl:scale-100 lg:scale-[0.85] md:scale-[0.75]">
             {/* Background Line Image */}
-            <div className="absolute inset-0 transition-transform duration-300">
+            <div className="absolute inset-0">
               <Image
                 src="/line.png"
                 alt="Workflow Path"
                 fill
-                className="object-contain"
+                className="object-contain animate-fadeIn"
                 priority
                 sizes="(min-width: 1280px) 1000px, (min-width: 1024px) 85vw, 75vw"
               />
             </div>
 
             {/* Numbered Circles and Text */}
-            <div className="relative h-full transform-gpu transition-transform duration-300">
+            <div className="relative h-full">
               {steps.map((step) => (
-                <div key={step.number} className="absolute transform-gpu transition-all duration-300">
+                <div key={step.number} className="workflow-step absolute transform-gpu">
                   {/* Circle with Number */}
                   <div className={`absolute ${step.position.circle}`}>
-                    <div className={`w-12 h-12 ${step.color} rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg transform transition-all duration-300 hover:scale-110`}>
+                    <div 
+                      className={`workflow-circle w-12 h-12 ${step.color} rounded-full flex items-center 
+                        justify-center text-white text-xl font-bold shadow-lg transform transition-all 
+                        duration-500 ease-out will-change-transform`}
+                    >
                       {step.number}
                     </div>
                   </div>
                   
                   {/* Text Content */}
-                  <div className={`absolute ${step.position.text} w-[280px] min-h-[120px] p-4 bg-white/5 backdrop-blur-sm rounded-lg transform transition-all duration-300 hover:bg-white/10`}>
-                    <h3 className="text-white text-[16px] xl:text-lg font-bold mb-2">{step.title}</h3>
+                  <div 
+                    className={`workflow-text absolute ${step.position.text} w-[280px] min-h-[120px] 
+                      p-4 bg-white/5 backdrop-blur-sm rounded-lg transform transition-all duration-500 
+                      ease-out will-change-transform will-change-opacity`}
+                  >
+                    <h3 className="text-white text-[16px] xl:text-lg font-bold mb-2">
+                      {step.title}
+                    </h3>
                     <p className="text-white text-[13px] xl:text-sm leading-relaxed">
                       {step.description}
                     </p>
