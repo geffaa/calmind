@@ -62,7 +62,7 @@ const DownloadSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="relative w-full min-h-screen bg-[#98C7CC]/30 overflow-hidden section-animate flex flex-col"
+      className="relative w-full min-h-1 bg-[#98C7CC]/30 overflow-hidden section-animate flex flex-col"
     >
   {/* Top Background Fill */}
   <div className="absolute inset-0 w-full h-full bg-[#FBFBFB]" />

@@ -4,6 +4,7 @@ import { FaStar } from 'react-icons/fa';
 import { IoTimeOutline } from 'react-icons/io5';
 import { useEffect } from 'react';
 
+// Sesuaikan interface agar kompatibel dengan data dari ProfileSection
 interface Session {
   time: string;
   isHighlighted: boolean;
@@ -29,34 +30,25 @@ interface CounselorCardProps {
 
 const CounselorCard: React.FC<CounselorCardProps> = ({ counselor, onPrev, onNext }) => {
   const isTimeOver = (timeString: string): boolean => {
-    // Get current date and time in local timezone
     const now = new Date();
-    
-    // Parse the time string
     const [hours, minutes] = timeString.split(':').map(Number);
-    
-    // Create a new date object for today with the session time
     const sessionTime = new Date();
     sessionTime.setHours(hours, minutes, 0, 0);
-    
-    // If session time is before current time, it's over
     return now.getTime() > sessionTime.getTime();
   };
 
-  // Auto slide effect
   useEffect(() => {
     const timer = setInterval(() => {
       onNext();
     }, 5000);
 
-    // Cleanup interval on unmount
     return () => clearInterval(timer);
   }, [onNext]);
 
   return (
     <div className="bg-white rounded-[32px] shadow-md overflow-hidden animate-fade-in w-full lg:w-[600px]">
       <div className="flex flex-col md:flex-row h-auto md:h-[420px]">
-        {/* Image container with adjusted mobile height */}
+        {/* Image container */}
         <div className="w-full md:w-[180px] md:shrink-0">
           <div className="relative w-full h-[280px] md:h-[420px]">
             <Image
@@ -129,8 +121,8 @@ const CounselorCard: React.FC<CounselorCardProps> = ({ counselor, onPrev, onNext
                       key={index}
                       className={`px-4 py-1.5 rounded-full text-sm border transition-all duration-300
                         ${isPassed 
-                          ? 'border-red-500 text-red-500 hover:bg-red-50' 
-                          : 'border-[#90AA8B] text-[#90AA8B] hover:bg-[#F0F4EF]'
+                          ? 'bg-red-50 border-red-200 text-red-500' 
+                          : 'bg-green-50 border-green-200 text-green-600'
                         }`}
                     >
                       Hari ini • {session.time}

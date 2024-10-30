@@ -3,12 +3,29 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import CounselorCard from "../CounselorCard";
 
+// Interface harus sama dengan yang ada di CounselorCard
+interface Session {
+  time: string;
+  isHighlighted: boolean;
+}
+
+interface Counselor {
+  id: number;
+  name: string;
+  rating: number;
+  reviews: number;
+  experience: string;
+  specialties: string[];
+  sessions: Session[];
+  image: string;
+  verified: boolean;
+}
+
 const ProfileSection = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  // Move counselors data to the top
-  const counselors = [
+  const counselors: Counselor[] = [
     {
       id: 1,
       name: "Endang S., M.Psi., Psikolog",
@@ -83,7 +100,6 @@ const ProfileSection = () => {
     }
   ];
 
-  // Handler functions after counselors declaration
   const handlePrevCounselor = useCallback(() => {
     setCurrentIndex((prev) => 
       prev === 0 ? counselors.length - 1 : prev - 1
@@ -157,7 +173,6 @@ const ProfileSection = () => {
 
                   {/* Button Section */}
                   <div className="mt-6 lg:mt-0">
-                    {/* Mobile Button */}
                     <div className="block lg:hidden">
                       <button 
                         className="w-full bg-[#C3B1E1] text-[#FBFBFB] px-6 py-3 rounded-full text-sm font-bold hover:bg-[#B39FD3] transition-all duration-300 active:scale-[0.98] shadow-sm hover:shadow-md"
@@ -166,7 +181,6 @@ const ProfileSection = () => {
                       </button>
                     </div>
 
-                    {/* Desktop Button */}
                     <div className="hidden lg:block">
                       <button 
                         className="bg-[#C3B1E1] text-[#FBFBFB] px-8 py-3.5 rounded-full text-base font-bold hover:bg-[#B39FD3] transition-all duration-300 hover:shadow-md active:scale-[0.98] shadow-sm"
