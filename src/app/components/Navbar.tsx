@@ -49,9 +49,9 @@ export default function Navbar() {
             <div className="flex-none transition-transform duration-300 hidden lg:block">
               <Link href="/">
                 <Image
-                  src="/calmind.png"
-                  alt="Calmind Logo"
-                  width={isScrolled ? 100 : 120}
+                  src="/muarasuara.png"
+                  alt="Muara Suara Logo"
+                  width={isScrolled ? 140 : 160}
                   height={isScrolled ? 33 : 40}
                   className="object-contain transition-all duration-300"
                   priority
@@ -129,8 +129,8 @@ export default function Navbar() {
           <div className="flex items-center justify-between px-6 py-4 border-b">
               <Link href="/" onClick={() => setIsMenuOpen(false)}>
                 <Image
-                  src="/calmind.png"
-                  alt="Calmind Logo"
+                  src="/muarasuara.png"
+                  alt="Muara Suara Logo"
                   width={100}
                   height={33}
                   className="object-contain"

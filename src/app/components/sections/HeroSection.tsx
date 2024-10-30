@@ -82,13 +82,13 @@ export default function HeroSection() {
               
               {/* Description */}
               <p className="animate-on-scroll text-[#2F2F2F] text-base sm:text-lg md:text-xl mt-4 sm:mt-6 lg:mt-8 mb-6 lg:mb-8 w-[340px] sm:w-[500px] md:w-[650px] lg:w-[800px] font-semibold transition-all duration-300 text-justify leading-[26px] sm:leading-[28px] md:leading-[30px] lg:leading-[32px] opacity-0">
-                Biarkan Calmind memahami emosimu dan memberi rekomendasi tepat untuk suasana hati lebih baik. Jelajahi Learning Journey, dapatkan dukungan konselor, dan temukan kekuatan bersama komunitas positif.
+                Biarkan Muara Suara memahami emosimu dan memberi rekomendasi tepat untuk suasana hati lebih baik. Jelajahi Learning Journey, dapatkan dukungan konselor, dan temukan kekuatan bersama komunitas positif.
               </p>
 
               {/* Buttons */}
               <div className="animate-on-scroll flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-[90%] sm:max-w-none transition-all duration-300 opacity-0">
                 <button className="bg-[#98C7CC] text-white px-6 sm:px-7 lg:px-8 py-3 lg:py-4 rounded-full font-semibold text-base lg:text-lg hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto whitespace-nowrap">
-                  Unduh Aplikasi Calmind
+                  Unduh Aplikasi Muara Suara
                 </button>
                 <button className="bg-[#C3B1E1] text-white px-6 sm:px-7 lg:px-8 py-3 lg:py-4 rounded-full font-semibold text-base lg:text-lg hover:opacity-90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto whitespace-nowrap">
                   Coba AI Voice Mood
