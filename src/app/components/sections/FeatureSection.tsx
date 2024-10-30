@@ -79,7 +79,7 @@ export default function FeatureSection() {
                     <h3 className="text-white text-xl lg:text-3xl font-bold transition-transform duration-300 group-hover:translate-x-1">AI Voice Mood</h3>
                   </div>
                   <p className="text-white text-base lg:text-xl leading-relaxed text-justify font-semibold">
-                    Calmind mendeteksi dan memahami emosi melalui nada suara untuk memberikan wawasan tentang suasana hati. Kamu akan mendapat rekomendasi personal yang relevan.
+                    Muarasuara mendeteksi dan memahami emosi melalui nada suara untuk memberikan wawasan tentang suasana hati. Kamu akan mendapat rekomendasi personal yang relevan.
                   </p>
                 </div>
 

@@ -16,7 +16,7 @@ const Footer = () => {
           />
         </div>
         <p className="text-[#6F6C90] text-sm font-semibold">
-          Copyright © 2024 Calmind | All Rights Reserved
+          Copyright © 2024 Muarasuara | All Rights Reserved
         </p>
       </div>
 

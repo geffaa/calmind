@@ -163,7 +163,7 @@ const ProfileSection = () => {
                           Konselor
                         </span>{" "}
                         <br className="hidden lg:block" />
-                        MuaraSuara
+                        Muarasuara
                       </h2>
                     </div>
                     <p className="text-base lg:text-lg xl:text-xl text-[#2F2F2F] max-w-[600px] font-semibold leading-relaxed text-justify">
