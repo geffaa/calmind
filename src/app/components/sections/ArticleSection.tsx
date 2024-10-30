@@ -132,7 +132,7 @@ const ArticleSection = () => {
                     {article.date}
                   </div>
                   <button className="p-1.5 sm:p-2 hover:bg-[#F3F0FF] rounded-full transition-all duration-300">
-                    <div className="relative w-7 sm:w-7 h-7 sm:h-7">
+                    <div className="relative w-8 h-8 sm:w-9 sm:h-9">
                       <Image
                         src="/share-icon.png"
                         alt="Share"

@@ -91,15 +91,18 @@ export default function Navbar() {
             {/* CTA Button dan Hamburger */}
             <div className="flex items-center gap-4">
               <div className="hidden lg:block">
-                <button className={`
+              <a 
+                href="/aivoice"
+                className={`
                   bg-[#C3B1E1] text-[#FBFBFB] font-bold rounded-full hover:opacity-90 transition-all duration-300 whitespace-nowrap
                   ${isScrolled 
                     ? 'text-sm px-4 py-2 xl:px-5 xl:py-2.5' 
                     : 'text-base px-5 py-2.5 xl:px-6 xl:py-3'
                   }
-                `}>
-                  Coba AI Voice Mood
-                </button>
+                `}
+              >
+                Coba AI Voice Mood
+              </a>
               </div>
 
               {/* Hamburger Menu Button */}
