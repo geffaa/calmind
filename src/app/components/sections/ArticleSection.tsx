@@ -85,7 +85,7 @@ const ArticleSection = () => {
         </div>
 
         {/* Articles Grid with staggered animations */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap- sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
           {articles.map((article, index) => (
             <div
               key={index}
