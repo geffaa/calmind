@@ -49,14 +49,14 @@ const CounselorCard: React.FC<CounselorCardProps> = ({ counselor, onPrev, onNext
   return (
     <div className="bg-white rounded-[32px] shadow-md overflow-hidden animate-fade-in w-full lg:w-[600px]">
       <div className="flex flex-col md:flex-row h-auto md:h-[420px]">
-        {/* Image container with full width on mobile */}
+        {/* Image container with adjusted mobile height */}
         <div className="w-full md:w-[280px] md:shrink-0">
-          <div className="relative w-full h-[400px] md:h-[420px]">
+          <div className="relative w-full h-[280px] md:h-[420px]">
             <Image
               src={counselor.image}
               alt={counselor.name}
               fill
-              className="object-cover object-top"
+              className="object-cover object-[center_25%]"
               priority
             />
           </div>
