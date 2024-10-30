@@ -20,7 +20,7 @@ export default function FeatureSection() {
               void (card as HTMLElement).offsetWidth;
               setTimeout(() => {
                 card.classList.add('feature-slide-up');
-              }, index * 200);
+              }, index * 100);
             });
           } else {
             cards?.forEach(card => {
