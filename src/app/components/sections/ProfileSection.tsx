@@ -135,43 +135,50 @@ const ProfileSection = () => {
         <div className="flex flex-col items-center justify-center min-h-screen py-10 sm:py-16 lg:py-20">
           <div className="w-full max-w-7xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-              <div className="profile-content opacity-0 transform translate-y-8 transition-all duration-500">
-                <div className="flex flex-col h-full">
-                  <div className="flex-grow">
-                    <div className="mb-8">
-                      <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              {/* Left Content */}
+              <div className="profile-content opacity-0 transform translate-y-8 transition-all duration-500 flex">
+                <div className="flex flex-col justify-between w-full h-full lg:h-[420px]">
+                  {/* Content Section */}
+                  <div>
+                    <div className="mb-4 lg:mb-6">
+                      <h2 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                         Profil{" "}
                         <span className="text-[#C3B1E1] text-underline-animation">
                           Konselor
                         </span>{" "}
+                        <br className="hidden lg:block" />
                         MuaraSuara
                       </h2>
                     </div>
-                    <p className="text-base lg:text-2xl text-[#2F2F2F] font-semibold leading-relaxed text-justify">
+                    <p className="text-base lg:text-lg xl:text-xl text-[#2F2F2F] max-w-[600px] font-semibold leading-relaxed text-justify">
                       Temukan lebih dari 42 konselor berpengalaman yang siap mendampingi dan membantu kamu mengatasi berbagai masalah. Dapatkan solusi terbaik dan dukungan profesional untuk menemukan jalan keluar menuju kehidupan yang lebih baik.
                     </p>
-                    
-                    {/* Tombol Mobile */}
-                    <div className="mt-6 block lg:hidden">
+                  </div>
+
+                  {/* Button Section */}
+                  <div className="mt-6 lg:mt-0">
+                    {/* Mobile Button */}
+                    <div className="block lg:hidden">
                       <button 
                         className="w-full bg-[#C3B1E1] text-[#FBFBFB] px-6 py-3 rounded-full text-sm font-bold hover:bg-[#B39FD3] transition-all duration-300 active:scale-[0.98] shadow-sm hover:shadow-md"
                       >
                         Lihat Semua
                       </button>
                     </div>
-                  </div>
 
-                  {/* Tombol Desktop */}
-                  <div className="hidden lg:block mt-8">
-                    <button 
-                      className="bg-[#C3B1E1] text-[#FBFBFB] px-8 py-3.5 rounded-full text-base font-bold hover:bg-[#B39FD3] transition-all duration-300 hover:shadow-md active:scale-[0.98] shadow-sm"
-                    >
-                      Lihat Semua
-                    </button>
+                    {/* Desktop Button */}
+                    <div className="hidden lg:block">
+                      <button 
+                        className="bg-[#C3B1E1] text-[#FBFBFB] px-8 py-3.5 rounded-full text-base font-bold hover:bg-[#B39FD3] transition-all duration-300 hover:shadow-md active:scale-[0.98] shadow-sm"
+                      >
+                        Lihat Semua
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
 
+              {/* Right Content - Card */}
               <div className="profile-card opacity-0 transform translate-y-8 transition-all duration-500">
                 <CounselorCard
                   counselor={counselors[currentIndex]}

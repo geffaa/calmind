@@ -49,27 +49,25 @@ const CounselorCard: React.FC<CounselorCardProps> = ({ counselor, onPrev, onNext
   return (
     <div className="bg-white rounded-[32px] shadow-md overflow-hidden animate-fade-in w-full lg:w-[600px]">
       <div className="flex flex-col md:flex-row h-auto md:h-[420px]">
-        {/* Image container */}
-        <div className="w-full md:w-[280px] h-[280px] md:h-full relative bg-gray-100">
-          <div className="absolute inset-0">
+        {/* Image container with full width on mobile */}
+        <div className="w-full md:w-[280px] md:shrink-0">
+          <div className="relative w-full h-[400px] md:h-[420px]">
             <Image
               src={counselor.image}
               alt={counselor.name}
               fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, 280px"
+              className="object-cover object-top"
               priority
-              style={{ objectPosition: '50% 20%' }}
             />
           </div>
         </div>
 
         {/* Content container */}
-        <div className="flex-1 flex flex-col relative bg-white">
+        <div className="flex-1 min-w-0 flex flex-col relative bg-white">
           <div className="p-5 lg:p-6 flex-1 overflow-y-auto custom-scrollbar">
             {/* Name and Verification */}
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-bold text-gray-800 truncate pr-2">
+            <div className="flex items-center gap-2 mb-4">
+              <h3 className="text-xl font-bold text-gray-800 truncate">
                 {counselor.name}
               </h3>
               {counselor.verified && (
