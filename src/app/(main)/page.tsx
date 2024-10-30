@@ -4,6 +4,7 @@ import FeatureSection from "@/app/components/sections/FeatureSection";
 import HeroSection from "@/app/components/sections/HeroSection";
 import ProfileSection from "@/app/components/sections/ProfileSection";
 import WorkflowSection from "@/app/components/sections/WorkflowSection";
+import TestimonialSection from "../components/sections/TestimonialSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <ProfileSection />
       <WorkflowSection />
       <ArticleSection />
+      <TestimonialSection />
       <DownloadSection />
     </main>
   );

@@ -164,10 +164,10 @@ const WorkflowSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-[#98C7CC] relative overflow-hidden py-16">
+    <section className="min-h-[120vh] bg-[#98C7CC] relative overflow-hidden py-16">
       <div className="container mx-auto px-4 relative z-10 max-w-[1280px] xl:max-w-6xl transition-all duration-300">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 lg:mb-40">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
             <span className="text-white">Cara</span>{" "}
             <span className="text-gray-700 underline decoration">Kerja</span>{" "}
