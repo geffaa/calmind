@@ -190,13 +190,6 @@ const ProfileSection = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .feature-slide-up {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      `}</style>
     </section>
   );
 }

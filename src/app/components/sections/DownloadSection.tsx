@@ -95,18 +95,18 @@ const DownloadSection = () => {
       {/* Left Content */}
       <div className="w-full lg:w-[45%] xl:w-1/2 py-16 px-4 sm:px-8 md:px-12 lg:pl-16 lg:pr-0">
           <div className="space-y-4 animate-content relative z-10">
-            <h1 className="animate-title text-justify md:text-left text-[40px] md:text-[45px] lg:text-[60px] xl:text-[48px] 2xl:text-[76px] font-bold text-[#FBFBFB] leading-[1.15] sm:max-w-[540px] lg:max-w-none">
-              Siap untuk hidup lebih
-              <br className="hidden sm:block" />
-              tenang, bahagia,
-              <br className="hidden sm:block" />
-              dan percaya diri?
+          <h1 className="animate-title text-left md:text-left text-[40px] md:text-[45px] lg:text-[60px] xl:text-[48px] 2xl:text-[64px] font-bold text-[#FBFBFB] leading-[1.15] sm:max-w-[540px] lg:max-w-none">
+            Siap untuk hidup lebih
+            tenang, bahagia, dan {""}
+            <br className="hidden sm:block" />
+            percaya diri?
             </h1>
             
-            <p className="animate-description text-base sm:text-lg lg:text-xl xl:text-[20px] 2xl:text-[25px] text-[#FBFBFB] font-semibold leading-[1.7] sm:max-w-[540px] lg:max-w-none">
-              Saatnya jaga mentalmu dengan Muarasuara.
-              <br className="hidden sm:block" />
-              Unduh Sekarang & Mulai Perubahanmu!
+            <p className="animate-description text-base text-justify sm:text-lg lg:text-xl xl:text-[20px] 2xl:text-[25px] text-[#FBFBFB] font-semibold leading-[1.7] sm:max-w-[540px] lg:max-w-none">
+            Saatnya jaga mentalmu dengan{" "}
+            <span>Muarasuara</span>. {""}
+            <br className="hidden sm:block" />
+            Unduh Sekarang & Mulai Perubahanmu!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
