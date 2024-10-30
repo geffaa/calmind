@@ -6,6 +6,9 @@ const DownloadSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // Store the current value in a variable to use in cleanup
+    const currentSection = sectionRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -14,47 +17,53 @@ const DownloadSection = () => {
           );
           
           if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            entry.target.classList.remove('out-view');
-            elements.forEach(el => {
-              el.classList.add('in-view');
-              el.classList.remove('out-view');
+            requestAnimationFrame(() => {
+              entry.target.classList.add('in-view');
+              entry.target.classList.remove('out-view');
+              elements.forEach(el => {
+                el.classList.add('in-view');
+                el.classList.remove('out-view');
+              });
             });
           } else {
             // Check if scrolling up or down
             if (entry.boundingClientRect.top > 0) {
-              entry.target.classList.add('out-view');
-              entry.target.classList.remove('in-view');
-              elements.forEach(el => {
-                el.classList.add('out-view');
-                el.classList.remove('in-view');
+              requestAnimationFrame(() => {
+                entry.target.classList.add('out-view');
+                entry.target.classList.remove('in-view');
+                elements.forEach(el => {
+                  el.classList.add('out-view');
+                  el.classList.remove('in-view');
+                });
               });
             }
           }
         });
       },
       {
-        threshold: 0.1,
-        rootMargin: '-50px'
+        threshold: [0.1, 0.5], // Added multiple thresholds for smoother transitions
+        rootMargin: '-5% 0px' // Adjusted rootMargin for better trigger timing
       }
     );
   
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentSection) {
+      observer.observe(currentSection);
     }
   
+    // Cleanup function using the stored reference
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
+      observer.disconnect(); // Added full cleanup
     };
-  }, []);
+  }, []); // Empty dependency array since we're using ref
 
   return (
     <section 
-  ref={sectionRef} 
-  className="relative w-full min-h-screen bg-[#98C7CC]/30 overflow-hidden section-animate flex flex-col"
->
+      ref={sectionRef} 
+      className="relative w-full min-h-screen bg-[#98C7CC]/30 overflow-hidden section-animate flex flex-col"
+    >
   {/* Top Background Fill */}
   <div className="absolute inset-0 w-full h-full bg-[#FBFBFB]" />
   
