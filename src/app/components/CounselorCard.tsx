@@ -29,11 +29,18 @@ interface CounselorCardProps {
 
 const CounselorCard: React.FC<CounselorCardProps> = ({ counselor, onPrev, onNext }) => {
   const isTimeOver = (timeString: string): boolean => {
+    // Get current date and time in local timezone
     const now = new Date();
+    
+    // Parse the time string
     const [hours, minutes] = timeString.split(':').map(Number);
-    const sessionTime = new Date(now);
-    sessionTime.setHours(hours, minutes, 0);
-    return now > sessionTime;
+    
+    // Create a new date object for today with the session time
+    const sessionTime = new Date();
+    sessionTime.setHours(hours, minutes, 0, 0);
+    
+    // If session time is before current time, it's over
+    return now.getTime() > sessionTime.getTime();
   };
 
   // Auto slide effect
