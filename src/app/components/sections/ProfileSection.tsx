@@ -19,7 +19,7 @@ const ProfileSection = () => {
       sessions: [
         { time: "13:00", isHighlighted: true },
         { time: "15:00", isHighlighted: false },
-        { time: "15:00", isHighlighted: false }
+        { time: "17:00", isHighlighted: false }
       ],
       image: "/doctor1.png",
       verified: true
